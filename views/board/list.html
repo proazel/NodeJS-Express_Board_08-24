@@ -1,0 +1,21 @@
+{% include "../layout/top.html" %}
+    <table>
+        <tr>
+            <td>번호</td>
+            <td>제목</td>
+            <td>작성일</td>
+            <td>조회수</td>
+        </tr>
+        {% for item in result %}
+        <tr>
+            <td>{{item.id}}</td>
+            <td><a href="/board/view?id={{item.id}}">{{item.title}}</a></td>
+            <td>{{item.date}}</td>
+            <td>{{item.hit}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <div class="btn_wrap">
+        <a class="btn" href="/board/write">작성하기</a>
+    </div>
+{% include "../layout/bottom.html" %}

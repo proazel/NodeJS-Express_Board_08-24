@@ -1,0 +1,27 @@
+{% include "../layout/top.html" %}
+    {% for item in result %}
+    <table>
+        <tr>
+            <td>제목</td>
+            <td>{{item.title}}</td>
+        </tr>
+        <tr>
+            <td>작성일</td>
+            <td>{{item.date}}</td>
+        </tr>
+        <tr>
+            <td>조회수</td>
+            <td>{{item.hit}}</td>
+        </tr>
+        <tr>
+            <td>글 내용</td>
+            <td colspan="2">{{item.content}}</td>
+        </tr>
+    </table>
+    <div class="btn_wrap">
+        <a class="btn" href="/board/modify?id={{item.id}}">수정하기</a>
+        <a class="btn" href="/board/list">돌아가기</a>
+        <a class="btn" href="/board/remove?id={{item.id}}">삭제하기</a>
+    </div>
+    {% endfor %}
+{% include "../layout/bottom.html" %}

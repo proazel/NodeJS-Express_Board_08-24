@@ -1,0 +1,22 @@
+{% include "../layout/top.html" %}
+    <div class="form_wrap">
+        {% for item in result %}
+        <form action="/board/modify" method="post">
+            <input type="hidden" name="id" value="{{item.id}}">
+            <h2>글 수정</h2>
+            <ul>
+                <li>글 제목</li>
+                <li><input type="text" name="title" value="{{item.title}}"></li>
+            </ul>
+            <ul>
+                <li>글 내용</li>
+                <li>
+                    <textarea name="content">{{item.content}}</textarea>
+                </li>
+            </ul>
+            <input class="btn" type="submit" value="수정완료" >
+            <a class="btn" href="/board/list">돌아가기</a>
+        </form>
+        {% endfor %}
+    </div>
+{% include "../layout/bottom.html" %}
